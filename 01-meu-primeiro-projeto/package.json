@@ -1,11 +1,12 @@
 {
-  "name": "meu-primeiro-projeto",
+  "name": "01-meu-primeiro-projeto",
   "version": "1.0.0",
-  "description": "",
+  "description": "meu primeiro projeto nodeJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
   "author": "tulio-perdigao",
   "license": "ISC"
 }
