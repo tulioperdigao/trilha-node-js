@@ -1,12 +1,16 @@
 {
-  "name": "01-meu-primeiro-projeto",
+  "name": "project-node-trail-01",
   "version": "1.0.0",
-  "description": "meu primeiro projeto nodeJS",
+  "description": "My first project for node.js trail",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "open": "echo \"Olá, mundo!\" && exit 1"
   },
-  "keywords": [],
+  "keywords": [
+    "project", 
+    "minha primeira api"
+  ],
   "author": "tulio-perdigao",
   "license": "ISC"
 }
