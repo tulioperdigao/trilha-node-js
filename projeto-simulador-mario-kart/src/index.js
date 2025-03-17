@@ -41,6 +41,26 @@ async function logRollResult(characterName, block, diceResult, attribute) {
     console.log(`${characterName} 🎲 rolou um dado de ${block} ${diceResult} + ${attribute} = ${diceResult + attribute}`);
 }
 
+async function confrontItem() {
+    let random = Math.floor(Math.random() * 2 + 1)
+    let item = ''
+    switch (random) {
+        case random = 1:
+            item = 'CASCO'
+            break;
+            
+        case random = 2:
+            item = 'BOMBA'
+            break;
+    
+        default:
+            item = 'CASCO'
+            break;
+    }
+
+    return item;
+}
+
 async function playRaceEngine(character1, character2) {
     
     for (let round = 1; round <= 5; round++) {
@@ -128,15 +148,35 @@ async function playRaceEngine(character1, character2) {
             );
 
             if (powerResult1 > powerResult2 && character2.PONTOS > 0) {
-                console.log(`${character1.NOME} levou a melhor no confronto! ${character2.NOME} perdeu 1 ponto 🐢`);
-                character2.PONTOS--;
+                let item = await confrontItem();
+                console.log(`${character1.NOME} levou a melhor no confronto! ${character2.NOME} sofreu dano de um(a) ${item}`)
+                if (item === 'CASCO') {
+                    character2.PONTOS--;
+                } else if (item === 'BOMBA') {
+                    character2.PONTOS - 2;
+                }
+
+                if (Math.floor(Math.random() * 2 + 1) === 1) {
+                    console.log(`${character1.NOME} ganhou um turbo e ganha 1 ponto!`);
+                    character1.PONTOS++;
+                }
             } else if (powerResult1 > powerResult2 && character2.PONTOS <= 0) {
                 console.log(`${character2.NOME} não tem pontos para perder, segue o jogo!`)
             }
 
             if (powerResult2 > powerResult1 && character1.PONTOS > 0) {
-                console.log(`${character2.NOME} levou a melhor no confronto! ${character1.NOME} perdeu 1 ponto 🐢`);
-                character1.PONTOS--;
+                let item = await confrontItem();
+                console.log(`${character2.NOME} levou a melhor no confronto! ${character1.NOME} sofreu dano de um(a) ${item}`);
+                if (item === 'CASCO') {
+                    character2.PONTOS--;
+                } else if (item === 'BOMBA') {
+                    character2.PONTOS - 2;
+                }
+
+                if (Math.floor(Math.random() * 2 + 1) === 1) {
+                    console.log(`${character2.NOME} ganhou um turbo e ganha 1 ponto!`);
+                    character2.PONTOS++;
+                }
             } else if (powerResult2 > powerResult1 && character1.PONTOS <= 0){
                 console.log(`${character1.NOME} não tem pontos para perder, segue o jogo!`)
             }
