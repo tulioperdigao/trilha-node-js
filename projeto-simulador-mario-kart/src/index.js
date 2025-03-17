@@ -78,6 +78,10 @@ async function playRaceEngine(character1, character2) {
                 diceResult2, 
                 character2.VELOCIDADE
             );
+
+            if (totalTestSkill1 === totalTestSkill2) {
+                console.log("Disputa acirrada nesse trecho da pista, tempos iguais!")
+            }
         };
 
         if (block === "CURVA") {
@@ -97,6 +101,10 @@ async function playRaceEngine(character1, character2) {
                 diceResult2, 
                 character2.MANOBRABILIDADE
             );
+
+            if (totalTestSkill1 === totalTestSkill2) {
+                console.log("Disputa acirrada nesse trecho da pista, tempos iguais!")
+            }
         };
 
         if (block === "CONFRONTO") {
@@ -122,11 +130,15 @@ async function playRaceEngine(character1, character2) {
             if (powerResult1 > powerResult2 && character2.PONTOS > 0) {
                 console.log(`${character1.NOME} levou a melhor no confronto! ${character2.NOME} perdeu 1 ponto 🐢`);
                 character2.PONTOS--;
+            } else if (powerResult1 > powerResult2 && character2.PONTOS <= 0) {
+                console.log(`${character2.NOME} não tem pontos para perder, segue o jogo!`)
             }
 
             if (powerResult2 > powerResult1 && character1.PONTOS > 0) {
                 console.log(`${character2.NOME} levou a melhor no confronto! ${character1.NOME} perdeu 1 ponto 🐢`);
                 character1.PONTOS--;
+            } else if (powerResult2 > powerResult1 && character1.PONTOS <= 0){
+                console.log(`${character1.NOME} não tem pontos para perder, segue o jogo!`)
             }
 
             console.log(
@@ -151,6 +163,7 @@ async function playRaceEngine(character1, character2) {
 };
 
 async function declareWinner(character1, character2) {
+    console.log("BANDEIRA QUADRICULADA!!! 🏁")
     console.log("Resultado Final:")
     console.log(`${character1.NOME}: ${character1.PONTOS} ponto(s)`)
     console.log(`${character2.NOME}: ${character2.PONTOS} ponto(s)`)
