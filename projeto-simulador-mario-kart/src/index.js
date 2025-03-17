@@ -48,7 +48,7 @@ async function confrontItem() {
         case random = 1:
             item = 'CASCO'
             break;
-            
+
         case random = 2:
             item = 'BOMBA'
             break;
@@ -152,8 +152,10 @@ async function playRaceEngine(character1, character2) {
                 console.log(`${character1.NOME} levou a melhor no confronto! ${character2.NOME} sofreu dano de um(a) ${item}`)
                 if (item === 'CASCO') {
                     character2.PONTOS--;
-                } else if (item === 'BOMBA') {
-                    character2.PONTOS - 2;
+                    console.log('-1 ponto.')
+                } else if (item === 'BOMBA' && character2.PONTOS >=2) {
+                    character2.PONTOS -= 2;
+                    console.log('-2 pontos.')
                 }
 
                 if (Math.floor(Math.random() * 2 + 1) === 1) {
@@ -168,9 +170,11 @@ async function playRaceEngine(character1, character2) {
                 let item = await confrontItem();
                 console.log(`${character2.NOME} levou a melhor no confronto! ${character1.NOME} sofreu dano de um(a) ${item}`);
                 if (item === 'CASCO') {
-                    character2.PONTOS--;
-                } else if (item === 'BOMBA') {
-                    character2.PONTOS - 2;
+                    character1.PONTOS--;
+                    console.log('-1 ponto.')
+                } else if (item === 'BOMBA' && character1.PONTOS >=2) {
+                    character1.PONTOS -= 2;
+                    console.log('-2 pontos.')
                 }
 
                 if (Math.floor(Math.random() * 2 + 1) === 1) {
