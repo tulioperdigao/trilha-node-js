@@ -20,6 +20,12 @@ async function rollDice() {
 
 async function playRaceEngine(character1, character2) {
     
+    for (let round = 0; round <= 5; round++) {
+        console.log(`🏁 Rodada ${round}`)
+        
+        // Sortear bloco
+        
+    }
 };
 
 (async function main() {
