@@ -1,0 +1,12 @@
+{
+  "name": "ecmascript-modules",
+  "version": "1.0.0",
+  "description": "project to learn EcmaScript Modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["ecmascript", "modules"],
+  "author": "Tulio Perdigão",
+  "license": "ISC"
+}
