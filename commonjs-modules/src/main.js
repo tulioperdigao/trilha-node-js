@@ -1,18 +1,21 @@
-const product = require("./services/products")
-const config = require("./services/config")
-const dataBase = require("./services/database")
+// Busca apenas aquelas funções que vou usar
+const {getFullName, productType} = require("./services/products");
+
+// Busca TODAS as funções do módulo(arquivo)
+const products = require("./services/products");
+
+const config = require("./services/config");
+const dataBase = require("./services/database");
 
 async function main() {
     console.log("Carrinho de compras:");
 
-    // p.getFullName("408", "mousepad");
-    // p.getFullName("565", "mouse");
-    // p.getProductLabel("Teclado Gamer");
+    getFullName("408", "mousepad");
+    console.log(productType);
 
-    // product.getFullName("568", "Caixa de madeira");
+    // getFullName("565", "mouse");
+    // product.getProductLabel("Teclado Gamer");
 
-    // console.log(config.devArea);
-    // console.log(config.client);
 
     dataBase.connectToDatabase("MongoDB");
 }
