@@ -3,4 +3,11 @@ async function connectToDatabase(dataName) {
     console.log(`Conectado com o banco: ${dataName}.`);
 };
 
-export default connectToDatabase;
+async function disconnectDatabase() {
+    console.log("Desconectando do banco de dados.")
+}
+
+export {
+    connectToDatabase,
+    disconnectDatabase,
+};
