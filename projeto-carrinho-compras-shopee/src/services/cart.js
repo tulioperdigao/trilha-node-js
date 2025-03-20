@@ -8,7 +8,7 @@ async function addItem(userCart, item) {
 
 // -> calcular o total
 async function calculateTotal(userCart) {
-    return userCart.reduce((total, item) => total + item.subtotal(), 0);
+    console.log(userCart.reduce((total, item) => total + item.subtotal(), 0));
 };
 
 // -> remover um Item - diminui um item
