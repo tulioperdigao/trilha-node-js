@@ -1,7 +1,7 @@
-import {connectToDatabase, disconnectDatabase} from "./utils/database.js";
+import * as database from './utils/database.js';
 
 
 console.log("Hello, Ecma!");
 
-connectToDatabase("MongoDB");
-disconnectDatabase();
+database.connectToDatabase("MongoDB");
+database.disconnectDatabase();
