@@ -13,11 +13,10 @@ const item2 = await createItem('hotweels Lamborghini', 39.99, 3);
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
 
-console.log("Shoppe Cart TOTAL: " )
-
+await cartService.displayCart(myCart);
 
 //deletei dois itens do carrinho
-await cartService.deleteItem(myCart, item2.name)
-await cartService.deleteItem(myCart, item1.name)
+// await cartService.deleteItem(myCart, item2.name)
+// await cartService.deleteItem(myCart, item1.name)
 
 await cartService.calculateTotal(myCart)
