@@ -18,12 +18,17 @@ async function removeItem(userCart, index) {
 
 // -> deletar Item do carrinho
 async function deleteItem(userCart, nameItem) {
-    
+    const index = userCart.findIndex((item) => item.name === nameItem);
+
+    if (index !== -1) {
+        userCart.splice(index, 1);
+    }
 };
 
 export {
     addItem,
     calculateTotal,
-    deleteItem
+    deleteItem,
+    removeItem
 }
 
