@@ -6,6 +6,7 @@ const myWhishList = [];
 
 console.log("Welcome to your Shopee Cart!");
 
+// criando dois itens
 const item1 = await createItem('hotweels Ferrari', 20.99, 1);
 const item2 = await createItem('hotweels Lamborghini', 39.99, 3);
 
@@ -13,7 +14,8 @@ const item2 = await createItem('hotweels Lamborghini', 39.99, 3);
 await cartService.addItem(myCart, item1);
 await cartService.addItem(myCart, item2);
 
-await cartService.removeItem(myCart, 1);
+await cartService.removeItem(myCart, item2);
+await cartService.removeItem(myCart, item2);
 
 await cartService.displayCart(myCart);
 
