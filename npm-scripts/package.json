@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "iniciar": "node src/index.js"
+    "iniciar": "node src/index.js && mkdir dist && echo \"Criando pasta 'dist' ✅\""
   },
   "keywords": [],
   "author": "",
