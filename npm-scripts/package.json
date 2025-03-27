@@ -6,8 +6,12 @@
   "type": "module",
   "scripts": {
     "prebuild": "npm install",
+
     "start:dev": "node src/index.js",
-    "start:watch": "node --watch src/index.js"
+    "start:watch": "node --watch src/index.js",
+
+    "test:run": "..",
+    "test:unit": ".." 
   },
   "keywords": [],
   "author": "",
