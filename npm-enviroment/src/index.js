@@ -1,7 +1,11 @@
 import connectToDatabase from "./database/data.js";
+import dotenv from 'dotenv';
+
+dotenv.config()
 
 async function main() {
-    await connectToDatabase("sasuke", "uchiha");
+    console.log(process.env.USERDATABASE);
+    // await connectToDatabase("sasuke", "uchiha");
 }
 
 main();
