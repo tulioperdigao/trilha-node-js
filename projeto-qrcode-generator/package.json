@@ -1,0 +1,13 @@
+{
+  "name": "projeto-qrcode-generator",
+  "version": "1.0.0",
+  "description": "kit de utilidades para e-commerces",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
