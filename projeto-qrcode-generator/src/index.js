@@ -1,1 +1,7 @@
-console.log('Olá, mundo!')
+import prompt from "prompt";
+
+async function main() {
+    
+}
+
+main();
