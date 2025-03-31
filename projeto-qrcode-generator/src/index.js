@@ -1,4 +1,5 @@
 import prompt from "prompt";
+import chalk from "chalk";
 import mainPrompt from "./prompts/prompt-main.js";
 
 async function main() {
