@@ -1,3 +1,5 @@
-let name = "Tugão"
-
-console.log(name)
+function main() {
+    var myEmail = "tugao@gmail.com";
+    console.log(myEmail);
+}
+main();
