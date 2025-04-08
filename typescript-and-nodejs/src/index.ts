@@ -1,6 +1,4 @@
-function main() {
-    let myEmail:string = "tugao@gmail.com";
-    console.log(myEmail);
-}
 
-main();
+export function sayHelloWorld(world: string) {
+  return `Hello ${world}`;
+}
