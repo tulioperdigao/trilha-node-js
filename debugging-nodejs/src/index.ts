@@ -1,1 +1,3 @@
-console.log("oi");
+import {getBaseEmail} from "./services/email";
+
+getBaseEmail("Tulio");
