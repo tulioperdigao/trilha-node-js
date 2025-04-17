@@ -13,10 +13,10 @@ Podcasts feitos em vídeo
 
 ## Como
 
-#### Feature:
+### Feature:
 - Listar os episódios de podcasts em sessões de categorias
 
-### Como vou implementar:
+#### Como vou implementar:
 Vou retornar em uma API Rest (JSON) o nome do podcast, nome do episódio, imagem de capa, link, category
 
 ```js
