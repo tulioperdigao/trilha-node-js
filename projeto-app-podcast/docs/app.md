@@ -24,9 +24,9 @@ Vou retornar em uma API Rest (JSON) o nome do podcast, nome do episódio, imagem
     {
         podcastName: "flow",
         episode: "CBUM - Flow #319",
-        videoId: "pQSuQmUfS30"
+        videoId: "pQSuQmUfS30",
         cover: "https://i.ytimg.com/vi/pQSuQmUfS30/maxresdefault.jpg",
-        link: "https://www.youtube.com/watch?v=pQSuQmUfS30"
+        link: "https://www.youtube.com/watch?v=pQSuQmUfS30",
         categories: ["saúde", "bodybuilder", "esporte"]
     },
     {
@@ -34,7 +34,7 @@ Vou retornar em uma API Rest (JSON) o nome do podcast, nome do episódio, imagem
         episode: "SERGIO SACANI E BRENO MASI - Flow #434",
         videoId: "9i3bTzbYHAg",
         cover: "https://i.ytimg.com/vi/9i3bTzbYHAg/maxresdefault.jpg",
-        link: "https://www.youtube.com/watch?v=9i3bTzbYHAg"
+        link: "https://www.youtube.com/watch?v=9i3bTzbYHAg",
         categories: ["ciência", "humor"]
     }
 ]
