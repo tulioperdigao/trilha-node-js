@@ -1,12 +1,19 @@
 import * as http from 'http';
 import dotenv from 'dotenv';
+import {getListEpisodes} from './controllers/podcasts-controller';
 
 dotenv.config();
 
 const port = process.env.PORT;
 
 const server = http.createServer(
-    (request: http.IncomingMessage, response: http.ServerResponse) => {}
+    async (req: http.IncomingMessage, res: http.ServerResponse) => {
+        
+        if(req.method === 'GET') {
+            await getListEpisodes(req, res);
+        }
+
+    }
 );
 
 server.listen(port, () => {
