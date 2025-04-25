@@ -8,13 +8,19 @@ const port = process.env.PORT;
 
 const server = http.createServer(
     async (req: http.IncomingMessage, res: http.ServerResponse) => {
+
+        // queryString -> Texto pra consulta
+        // http://localhost:3333/api/episode?p=flow
+        const [baseUrl, queryString] = req.url?.split("?") ?? ["", ""];
         
-        // Listar podcasts
-        if(req.method === 'GET' && req.url === "/api/list") {
+        // Listar Podcasts
+        if(req.method === 'GET' && baseUrl === "/api/list") {
             await getListEpisodes(req, res);
         }
 
-        if(req.method === 'GET' && req.url === "/api/episode") {
+
+        // Filtrar Episódios
+        if(req.method === 'GET' && baseUrl === "/api/episode") {
             await getFilterEpisodes(req, res);
         }
 
