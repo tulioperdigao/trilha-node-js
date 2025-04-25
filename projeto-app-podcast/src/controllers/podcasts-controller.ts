@@ -1,22 +1,11 @@
 import {IncomingMessage, ServerResponse} from 'http';
+import {serviceListEpisodes} from '../services/list-episodes-service';
 
 
 export const getListEpisodes = async (req: IncomingMessage, res: ServerResponse) => {
+
+    const content = await serviceListEpisodes();
+
     res.writeHead(200, {'content-type': 'application/json'});
-    res.end(JSON.stringify(
-        [
-            {
-                podcastName: "flow",
-                episode: "CBUM - Flow #319",
-                videoId: "pQSuQmUfS30",
-                categories: ["saúde", "bodybuilder", "esporte"]
-            },
-            {
-                podcastName: "flow",
-                episode: "SERGIO SACANI E BRENO MASI - Flow #434",
-                videoId: "9i3bTzbYHAg",
-                categories: ["ciência", "humor"]
-            }
-        ]
-    ))
+    res.end(JSON.stringify(content));
 }
