@@ -1,12 +1,31 @@
-import { IncomingMessage } from "http";
 import { repositoryPodcast } from "../repositories/podcasts-repository"
+import { FilterPodcastModel } from "../models/filter-podcast-model";
+import { StatusCode } from "../utils/status-code";
 
 
 
-export const serviceFilterEpisodes = async (podcastName: string | undefined) => {
-    const queryString = podcastName?.split("?p=")[1] || ""
+export const serviceFilterEpisodes = async (
+    podcastName: string | undefined
+):Promise<FilterPodcastModel> => {
 
+    // Define a interface de retorno
+    let respondeFormat: FilterPodcastModel = {
+        statusCode: 0,
+        body: [],
+    };
+
+    // Buscando os Dados
+    const queryString = podcastName?.split("?p=")[1] || "";
     const data = await repositoryPodcast(queryString);
 
-    return data;
+    // Verifica se tem conteúdo
+    if (data.length !== 0) {
+        respondeFormat.statusCode = StatusCode.OK;
+    } else {
+        respondeFormat.statusCode = StatusCode.NO_CONTENT;
+    }
+
+    respondeFormat.body = data;
+
+    return respondeFormat;
 }
