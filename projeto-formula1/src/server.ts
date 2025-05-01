@@ -1,4 +1,5 @@
 import fastify from 'fastify';
+import { request } from 'http';
 
 const server = fastify({ logger: true });
 
@@ -57,6 +58,24 @@ server.get('/drivers', async (request, Response) => {
     Response.type("application/json").code(200);
     return {drivers}
 })
+
+interface DriverParams {
+    id: string
+}
+
+server.get<{Params: DriverParams}>('/drivers/:id', async (request, Response) => {
+    const id = parseInt(request.params.id);
+    const driver = drivers.find( d => d.id === id)
+
+    if (!driver) {
+        Response.type("application/json").code(404);
+        return {message: "Driver Not Found"}
+    } else {
+        Response.type("application/json").code(200);
+        return {driver};
+    }
+})
+
 
 server.listen({port: 3333}, () => {
     console.log("Servidor iniciado na porta 3333.")
