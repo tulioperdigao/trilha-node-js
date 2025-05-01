@@ -1,81 +1,133 @@
-<div align="center">
+# 🏎️ API F1 2025 - Equipes e Pilotos (Minimal API)
 
-  <img src="./.github/assets/blue-saiyan-bg.png" alt="Logo" height="200">
-  <h1 align="center"><strong>NODE BOILERPLATE - BLUE EDITION</strong></h1>
-  <p align="center">
-	  Don't start a new Node project from zero!<br> Use this simple <b>Nodejs</b> boilerplate with pre-configured <b>Typescript</b> in a modern way.
-  </p>
+Esta é uma **Minimal API** construída com [Fastify](https://www.fastify.io/) e [TypeScript](https://www.typescriptlang.org/), que fornece informações sobre as **equipes** e **pilotos** da Fórmula 1 em 2025. Simples, rápida e sem banco de dados — ideal para testes, aprendizado ou protótipos.
 
-</div>
+---
 
-<br />
+## 🚀 Tecnologias Utilizadas
 
-  <!-- Badges -->
-<div align="center">
-  
-  [![TypeScript version][ts-badge]][typescript-5-4]
-  [![Node.js version][nodejs-badge]][nodejs]
+- [Node.js](https://nodejs.org/)
+- [Fastify](https://www.fastify.io/)
+- [@fastify/cors](https://www.npmjs.com/package/@fastify/cors)
+- [TypeScript](https://www.typescriptlang.org/)
 
-</div>
+---
 
-# 🚀 Technologies
+## 📁 Estrutura de Dados
 
-This code source was developed with the following items:
+### 🔸 Equipes (`/teams`)
 
-### 📦 Dependencies
-
-- [typescript][typescript-npm] - Superset for application scale JavaScript development
-- [tsx][tsx-npm] - TypeScript Execute (tsx): Enable Node.js to run TypeScript
-- [tsup][tsup-npm] - Bundle your TypeScript library with no config, powered by esbuild
-- [@types/node][@types/node-npm] - type definitions for node
-
-### 📄 Files
-
-- `.gitignore` - Ignore folders like node_modules
-- `.env` - Enviroment variables
-- `tsconfig.json` - Typescript configure Options
-
-### ⚡ Scripts
-
-- `npm run dist`: Compiles TypeScript files to JavaScript in the dist directory.
-- `npm run start:dev`: Runs the server in development mode with environment variables loaded from the .env file.
-- `npm run start:watch`: Runs the server in development mode with support for automatic reload on file changes.
-- `npm run start:dist`: Compiles the project and runs the compiled version from the dist directory.
-
-# 👨‍💻 How To Use
-
-click in **[Use this template]** OR
-
-To clone and run this application, you'll need [Git](https://git-scm.com), [Node.js v20+](https://nodejs.org/en/) + [NPM v10+](https://nodejs.org/en/) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/felipeAguiarCode/node-blue-boilerplate
-
-# Go into the repository
-$ cd node-blue-boilerplate
-
-# Install dependencies
-$ npm install
+Cada equipe possui:
+```json
+{
+  "id": 1,
+  "name": "Ferrari",
+  "country": "Itália"
+}
 ```
 
-## Author
+### 🔸 Pilotos (`/drivers`)
 
-| [<img src="https://avatars3.githubusercontent.com/u/37452836?s=96&v=4"><br><sub>Felipe Aguiar</sub>](https://github.com/felipeAguiarCode) |
-| :---------------------------------------------------------------------------------------------------------------------------------------: |
-|                                            [Linkedin](www.linkedin.com/in/felipe-aguiar-exe/)                                             |
+Cada piloto possui:
+```json
+{
+  "id": 1,
+  "name": "Max Verstappen",
+  "team": "Red Bull Racing"
+}
+```
 
-# Credits
+---
 
-icons by [Pino Lamanna][dribble-icon]
+## 📦 Instalação
 
-[typescript]: https://www.typescriptlang.org/
-[typescript-5-4]: https://www.typescriptlang.org/
-[ts-badge]: https://img.shields.io/badge/TypeScript-5.4-blue.svg
-[nodejs-badge]: https://img.shields.io/badge/Node.js->=%2020.00-blue.svg
-[nodejs]: https://nodejs.org/
-[dribble-icon]: https://dribbble.com/Schakalwal
-[typescript-npm]: https://www.npmjs.com/package/typescript
-[tsx-npm]: https://www.npmjs.com/package/tsx
-[tsup-npm]: https://www.npmjs.com/package/tsup
-[@types/node-npm]: https://www.npmjs.com/package/@types/node
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/seu-usuario/f1-api-2025.git
+cd f1-api-2025
+```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Como Usar
+
+Inicie o servidor com:
+
+```bash
+npm run dev
+```
+
+O servidor estará disponível em:  
+👉 `http://localhost:3333`
+
+---
+
+## 📡 Rotas Disponíveis
+
+### 🔹 `GET /teams`
+
+Retorna todas as equipes de F1.
+
+### 🔹 `GET /teams/:id`
+
+Retorna os dados da equipe com o ID informado.
+
+**Exemplo:**  
+`GET /teams/1`  
+**Resposta:**  
+```json
+{
+  "team": {
+    "id": 1,
+    "name": "Ferrari",
+    "country": "Itália"
+  }
+}
+```
+
+### 🔹 `GET /drivers`
+
+Retorna todos os pilotos de F1.
+
+### 🔹 `GET /drivers/:id`
+
+Retorna os dados do piloto com o ID informado.
+
+**Exemplo:**  
+`GET /drivers/1`  
+**Resposta:**  
+```json
+{
+  "driver": {
+    "id": 1,
+    "name": "Max Verstappen",
+    "team": "Red Bull Racing"
+  }
+}
+```
+
+---
+
+## 🌐 CORS
+
+Esta Minimal API está com CORS liberado para todas as origens (`origin: "*"`) utilizando o plugin `@fastify/cors`.
+
+---
+
+## 🧑‍💻 Autor
+
+Desenvolvido por **Tulio Castro**  
+🔗 [LinkedIn](https://www.linkedin.com/in/tulio-perdigao/) • [GitHub](https://github.com/tulioperdigao)
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a Licença **MIT**.
